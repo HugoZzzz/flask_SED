@@ -1,0 +1,22 @@
+{% macro info_card(info) %}
+    <div class="info-card card">
+        <div class="card-body">
+            <a class="list-group-item list-group-item-action flex-column">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-success">
+                        {{ info.username }} 
+                        <small class="text-muted"> #{{ info.id }}</small>
+                    </h5>
+                </div>
+                <p class="mb-1">
+                    密码: <span class="text-muted">{{ info.password }}</span>
+                    昵称: <span class="text-muted">{{ info.nickname }}</span>
+                    姓名: <span class="text-muted">{{ info.name }}</span>
+                    身份证: <span class="text-muted">{{ info.id_card }}</span>
+                    电话： <span class="text-muted">{{ info.phone }}</span>
+                </p> 
+            </a>
+        </div>
+    </div>
+{% endmacro %}
+

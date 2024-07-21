@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5>{{ info|length }} info
+    <small class="float-right">
+        <a href="#bottom" title="Go Bottom">&darr;</a>
+    </small>
+</h5>
+<div class="list-group">
+    {% for user in info %}
+    <a class="list-group-item list-group-item-action flex-column" href="{{ url_for('.user_index', nickname=user.nickname) }}">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1 text-success">
+                {{ user.username }} 
+                <small class="text-muted"> #{{ user.id }}</small>
+            </h5>
+        </div>
+    </a>
+    {% endfor %}
+    {% if pagination %}
+    <div class="pagination justify-content-center">
+        {{ pagination.links }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% from 'bootstrap/nav.html' import render_nav_item %}
+
+<div class="row">
+    <div class="col-md-3">
+        <img class="img-fluid rounded" src="https://s2.loli.net/2023/03/01/dYQMrXeK8GVihP3.jpg">
+    </div>
+    <div class="col-md-9">
+        <h1>{{ user.nickname }}
+        </h1>
+        <p>
+            用户名：<small class="text-muted">{{ user.username }}</small>
+            密码：<small class="text-muted">{{ user.password }}</small>
+        </p>
+        <p>
+            {% if user.name %}
+            姓名：<small class="text-muted">{{ user.name }}</small>
+            {% endif %}
+        </p>
+        <p>
+            {% if user.id_card %}
+            身份证：<small class="text-muted">{{ user.id_card }}</small>
+            {% endif %}
+        </p>
+        <p>
+            {% if user.phone %}
+            电话：<small class="text-muted">{{ user.phone }}</small>
+            {% endif %}
+        </p>
+    </div>
+</div>
